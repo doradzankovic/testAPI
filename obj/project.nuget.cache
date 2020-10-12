@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tB+adO19t0yVYm1zbAqch9Qn0U5fMhgtW3EkUfYw77b8/54Jl3rOstADdY4g2+rfOEt4Kz/B1BINtAs7PCwBpw==",
+  "dgSpecHash": "ciTEn28vOH3PpFkcg8XWmNfaxtJehTCalIsSwgFYv+PalLw/E2ZoH1Rs7wHxaRlFBL55kuwQkMmQhyg5KjKMwg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\isido\\Documents\\VS Projects\\Movie\\MovieAPI\\MovieAPI.csproj",
+  "projectFilePath": "C:\\Users\\isido\\Documents\\VSProjects\\Movie\\MovieAPI\\MovieAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\isido\\.nuget\\packages\\google.apis.core\\1.49.0\\google.apis.core.1.49.0.nupkg.sha512",
     "C:\\Users\\isido\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

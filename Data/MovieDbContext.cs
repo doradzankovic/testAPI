@@ -21,12 +21,21 @@ namespace MovieAPI.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<MovieGenre>()
-            .HasKey(c => new { c.MovieID, c.GenreID });
+            .HasKey(m => new { m.MovieID, m.GenreID });
+            modelBuilder.Entity<MovieGenre>()
+                .HasOne(m => m.Movie)
+                .WithMany(mg => mg.MovieGenres)
+                .HasForeignKey(m => m.MovieID);
+            modelBuilder.Entity<MovieGenre>()
+                .HasOne(g => g.Genre)
+                .WithMany(mg => mg.MovieGenres)
+                .HasForeignKey(g => g.GenreID);
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql(@"Server=localhost;Port=5432;Database=movie;User Id = Dora; Password=0000");
+            optionsBuilder.UseNpgsql(@"Server=localhost;Port=5432;Database=movie2;User Id = dora; Password=0000");
             base.OnConfiguring(optionsBuilder);
         }
             

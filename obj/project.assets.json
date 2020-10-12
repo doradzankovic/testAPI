@@ -8926,11 +8926,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\isido\\Documents\\VS Projects\\Movie\\MovieAPI\\MovieAPI.csproj",
+      "projectUniqueName": "C:\\Users\\isido\\Documents\\VSProjects\\Movie\\MovieAPI\\MovieAPI.csproj",
       "projectName": "MovieAPI",
-      "projectPath": "C:\\Users\\isido\\Documents\\VS Projects\\Movie\\MovieAPI\\MovieAPI.csproj",
+      "projectPath": "C:\\Users\\isido\\Documents\\VSProjects\\Movie\\MovieAPI\\MovieAPI.csproj",
       "packagesPath": "C:\\Users\\isido\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\isido\\Documents\\VS Projects\\Movie\\MovieAPI\\obj\\",
+      "outputPath": "C:\\Users\\isido\\Documents\\VSProjects\\Movie\\MovieAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\isido\\AppData\\Roaming\\NuGet\\NuGet.Config",

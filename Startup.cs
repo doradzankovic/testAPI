@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using MovieAPI.Data;
-using Npgsql;
-using Google;
+using MovieAPI.Models;
 
 namespace MovieAPI
 {
@@ -31,18 +23,13 @@ namespace MovieAPI
         {
             services.AddControllers();
 
-            /*services.AddDbContext<MovieDbContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("MovieDbContext"))); */
-
             services.AddDbContext<MovieDbContext>(options =>
                     options.UseNpgsql(Configuration.GetConnectionString("MovieDbContext")));
-
-
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, MovieDbContext db)
         {
             if (env.IsDevelopment())
             {
@@ -59,6 +46,22 @@ namespace MovieAPI
             {
                 endpoints.MapControllers();
             });
+
+            db.Database.EnsureCreated();
+         
+        }
+
+        private static void UpdateDatabase(IApplicationBuilder app)
+        {
+            using (var serviceScope = app.ApplicationServices
+                .GetRequiredService<IServiceScopeFactory>()
+                .CreateScope())
+            {
+                using (var context = serviceScope.ServiceProvider.GetService<MovieDbContext>())
+                {
+                    context.Database.Migrate();
+                }
+            }
         }
     }
 }
