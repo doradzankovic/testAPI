@@ -22,18 +22,14 @@ namespace MovieAPI.Migrations
                     table.PrimaryKey("PK_Genres", x => x.ID);
                 });
 
-            string[] columns = new string[] { "ID", "Name" };
-            
-            Genre drama = new Genre();
-            drama.ID = 1;
-            drama.Name = "Drama";
-            Genre horror = new Genre();
-            horror.ID = 2;
-            horror.Name = "Horror";
-            Object[] values = new Object[] {drama, horror};
-
-
-            migrationBuilder.InsertData("Genres", columns, values, "movie2");
+            migrationBuilder.InsertData(
+                table: "Genres",
+                columns: new[] { "ID", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Drama" },
+                    { 2, "Horror" }
+                });
 
             migrationBuilder.CreateTable(
                 name: "Movies",

@@ -35,7 +35,7 @@ namespace MovieAPI.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql(@"Server=localhost;Port=5432;Database=movie2;User Id = dora; Password=0000");
+            optionsBuilder.UseNpgsql(@"Server=localhost;Port=5432;Database=movie4;User Id = dora; Password=0000");
             base.OnConfiguring(optionsBuilder);
         }
             

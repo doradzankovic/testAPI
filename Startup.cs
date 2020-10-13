@@ -47,7 +47,7 @@ namespace MovieAPI
                 endpoints.MapControllers();
             });
 
-            db.Database.EnsureCreated();
+            UpdateDatabase(app);
          
         }
 
